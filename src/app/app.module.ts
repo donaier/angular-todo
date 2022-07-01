@@ -15,12 +15,14 @@ import {MatCardModule} from '@angular/material/card';
 
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
+import { TodosPipe } from './todo/todo.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    TodoComponent
+    TodoComponent,
+    TodosPipe
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,25 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>📝 Todo</mat-card-title>
+    <mat-card-title>📝 Todos - open</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item *ngFor="let open of items">
+      <mat-list-item *ngFor="let open of items | todos: false">
+        <mat-checkbox [(ngModel)]="open.checked">
+          {{open.description}}
+        </mat-checkbox>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>✅ Todos - doneisiert</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let open of items | todos: true">
         <mat-checkbox [(ngModel)]="open.checked">
           {{open.description}}
         </mat-checkbox>
