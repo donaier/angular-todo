@@ -13,12 +13,14 @@ import { MatListModule } from '@angular/material/list';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodosPipe } from './todo/todo.pipe';
 import { TodoAddComponent } from './todo/todo-add.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { TodoAddComponent } from './todo/todo-add.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,3 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import TodoItem from './todo.type';
@@ -22,7 +21,6 @@ export class TodoAddComponent {
   public newTodoForm: FormGroup;
 
   public onAdd(form: FormGroupDirective) {
-    
     if (this.newTodoForm.valid && this.newTodoForm.dirty) {
       this.added.emit({
         id: this.currentMaxId + 1,

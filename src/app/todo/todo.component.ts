@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 import TodoItem from './todo.type';
 
 @Component({
@@ -8,19 +8,18 @@ import TodoItem from './todo.type';
   styleUrls: ['./todo.component.scss']
 })
 
-export class TodoComponent {
-  constructor() {
-  }
+export class TodoComponent implements OnInit {
+  constructor(private todoService: TodoService) {}
 
-  public items: Array<TodoItem> = [
-    {id: 1, checked: false, description: 'Erste Angular Applikation erstellen'},
-    {id: 2, checked: false, description: 'Todo Komponente erstellen'},
-    {id: 3, checked: false, description: 'Todos anzeigen'},
-    {id: 4, checked: false, description: 'Todos hinzufügen'},
-    {id: 5, checked: true, description: 'Todos erledigen'}
-  ];
+  public items: Array<TodoItem> = [];
 
   public onAdd(newTodo: TodoItem) {
     this.items.push(newTodo);
+  }
+
+  ngOnInit(): void {
+    this.todoService.load().subscribe(todos => {
+      this.items = todos;
+    })
   }
 }
