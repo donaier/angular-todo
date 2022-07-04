@@ -31,10 +31,10 @@ export class TodoComponent {
         description: this.newTodoForm.value.description,
         checked: false,
       });
-    }
 
-    form.resetForm();
-    this.newTodoForm.reset();
-    this.newTodoForm.markAsUntouched();
+      form.resetForm();
+      this.newTodoForm.reset();
+      this.newTodoForm.markAsUntouched();
+    }
   } 
 }
