@@ -18,13 +18,15 @@ import {MatCardModule} from '@angular/material/card';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodosPipe } from './todo/todo.pipe';
+import { TodoAddComponent } from './todo/todo-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     TodoComponent,
-    TodosPipe
+    TodosPipe,
+    TodoAddComponent
   ],
   imports: [
     BrowserModule,
